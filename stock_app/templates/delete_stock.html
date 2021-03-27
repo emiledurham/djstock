@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block h1 %}Delete Stock{% endblock %}
+{% block content %}
+<hr>
+</br>
+<div>
+
+
+<table class="table table-hover ">
+  <thead>
+    <tr>
+        <th scope="col">Ticker</th>
+        <th scope="col">#</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% if ticker_db %}
+                {% for item in ticker_db %}
+        <tr>
+             <td>{{ item }}</td>
+            <td><a class="btn btn-danger" href="{% url 'delete' item.id %}">Delete</a></td>
+        </tr>
+         {% endfor %}
+   {% else %}
+                <p class="text-center">You don't have any stonks!</p>
+            {% endif %}
+    </table>
+
+</div>
+
+{% endblock %}

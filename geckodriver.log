@@ -1,0 +1,24 @@
+1616700965800	geckodriver	INFO	Listening on 127.0.0.1:65260
+1616700966727	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/c4/p4t5lkw13f7_sc81mp4m7c6h0000gn/T/rust_mozprofilezuqKdT"
+1616700968999	geckodriver	INFO	Listening on 127.0.0.1:65305
+1616700970010	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/c4/p4t5lkw13f7_sc81mp4m7c6h0000gn/T/rust_mozprofileilqeev"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1616700975336	Marionette	INFO	Listening on port 65271
+1616700975440	Marionette	WARN	TLS certificate errors will be ignored for this session
+1616700975456	Marionette	ERROR	[19] No reply from Marionette:Register
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1616700976838	Marionette	INFO	Listening on port 65328
+1616700976944	Marionette	WARN	TLS certificate errors will be ignored for this session
+1616700976959	Marionette	ERROR	[19] No reply from Marionette:Register
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.

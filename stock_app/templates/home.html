@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block h1 %}Home{% endblock %}
+{% block content %}
+<hr>
+<br/>
+{% if api %}
+    {% if api == "Error..." %}
+        There was a problem with your ticker symbol...please try again...
+    {% else %}
+     <h1>{{ api.companyName }}</h1><br/>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Price</th>
+                    <th>Previous Close</th>
+                    <th>Market Cap</th>
+                    <th>YTD Change</th>
+                    <th>52Wk High</th>
+                    <th>52Wk Low</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>${{ api.latestPrice }}</td>
+                    <td>${{ api.previousClose }}</td>
+                    <td>${{ api.marketCap }}</td>
+                    <td>${{ api.ytdChange }}</td>
+                    <td>${{ api.week52High }}</td>
+                    <td>${{ api.week52Low }}</td>
+                </tr>
+            </tbody>
+        </table>
+    {% endif %}
+{% endif %}
+{% if graph %}
+        {{ graph|safe }}
+    {% else %}
+        <p>Search for a ticker in the top right corner</p>
+{% endif %}
+</p>
+</div>
+
+
+
+
+{% endblock %}

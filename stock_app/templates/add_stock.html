@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block h1 %}Add Stock{% endblock %}
+{% block content %}
+<hr>
+<form action="{% url 'add_stock' %}"class="d-flex" method="POST">
+          {% csrf_token %}
+        <input type="text" list="ticks" class="form-control me-2" type="Search" placeholder="Add Ticker to Portfolio" aria-label="Add" name="ticker" required>
+          <datalist id="ticks">
+                        {% for item in tick_list_clean %}
+                        <option>{{ item }}</option>
+                        {% endfor %}
+          </datalist>
+        <button class="btn btn-outline-success" type="submit">Add</button>
+      </form>
+</br>
+<div>
+
+
+<table class="table table-hover ">
+  <thead>
+    <tr>
+        <th scope="col">Ticker</th>
+        <th scope="col">Price</th>
+        <th scope="col">Previous Close</th>
+        <th scope="col">Market Cap</th>
+        <th scope="col">YTD Change</th>
+        <th scope="col">52Wk High</th>
+        <th scope="col">52Wk Low</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% if ticker_db %}
+         {% for tick_output_item in tick_output %}
+        <tr>
+            <td>{{ tick_output_item.companyName }}</td>
+            <td>${{ tick_output_item.iexRealtimePrice }}</td>
+            <td>${{ tick_output_item.previousClose }}</td>
+            <td>${{ tick_output_item.marketCap }}</td>
+            <td>{{ tick_output_item.ytdChange }} %</td>
+            <td>${{ tick_output_item.week52High }}</td>
+            <td>${{ tick_output_item.week52Low }}</td>
+        </tr>
+        {% endfor %}
+    {% endif %}
+    </table>
+
+</div>
+
+
+
+{% endblock %}
